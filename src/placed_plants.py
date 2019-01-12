@@ -6,7 +6,7 @@ class PlacedPlants:
         self.__placed_plants_data = []
 
     def add_plant(self, name: str, position: Tuple[float, float]):
-        self.__placed_plants_data.append(zip(name, position))
+        self.__placed_plants_data.append((name, position))
 
     @staticmethod
     def is_plant_in_range(user_position: Tuple[float, float], plant_position: Tuple[float, float],
