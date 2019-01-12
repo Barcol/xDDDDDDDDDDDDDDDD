@@ -1,4 +1,4 @@
-from typing import Tuple, Dict
+from typing import Tuple, List, Union
 
 
 class PlacedPlants:
@@ -15,11 +15,14 @@ class PlacedPlants:
             if abs(user_position[1] - plant_position[1]) < distance:
                 return True
 
-    def show_plants_in_range(self, user_position: Tuple[float, float], distance: float) -> Dict:
-        plants_to_return = {}
+    def show_plants_in_range(self, user_position: Tuple[float, float], distance: float) -> Union[List, dict]:
+        plants_to_return = []
         if distance == 0:
             return self.__placed_plants_data
         for plant in self.__placed_plants_data:
             if self.is_plant_in_range(user_position, self.__placed_plants_data[plant], distance):
-                plants_to_return[plant] = self.__placed_plants_data[plant]
+                plant_dict = {"name": plant,
+                              "positionX": self.__placed_plants_data[plant][0],
+                              "positionY": self.__placed_plants_data[plant][1]}
+                plants_to_return.append(plant_dict)
         return plants_to_return

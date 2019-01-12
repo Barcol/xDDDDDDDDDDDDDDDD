@@ -16,7 +16,6 @@ def add_plant():
     position_x = float(arguments.get("positionX"))
     position_y = float(arguments.get("positionY"))
     placed_plants.add_plant(plants_database.find_plant(name), (position_x, position_y))
-    print("wykonano funkcje 1")
 
     resp = make_response("")
     return resp
@@ -29,9 +28,7 @@ def get_plants():
     user_position_y = float(arguments.get("userPositionY"))
     distance = float(arguments.get("distance"))
     resp = jsonify(placed_plants.show_plants_in_range((user_position_x, user_position_y), distance))
-    print("wykonano funkcje 2")
 
-    # resp = make_response("")
     return resp
 
 
