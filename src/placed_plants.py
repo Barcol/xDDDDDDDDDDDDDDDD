@@ -4,7 +4,8 @@ from typing import Tuple, List, Union
 
 class PlacedPlants:
     def __init__(self):
-        self.__placed_plants_data = []
+        with open("data.json", "r") as outfile:
+            self.__placed_plants_data = json.load(outfile)
 
     def add_plant(self, name: str, position: Tuple[float, float]):
         plant = {"name": name, "positionX": position[0], "positionY": position[1]}
