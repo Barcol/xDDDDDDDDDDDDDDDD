@@ -3,10 +3,11 @@ from typing import Tuple, List, Union
 
 class PlacedPlants:
     def __init__(self):
-        self.__placed_plants_data = {}
+        self.__placed_plants_data = []
 
     def add_plant(self, name: str, position: Tuple[float, float]):
-        self.__placed_plants_data[name] = position
+        plant = {"name": name, "positionX": position[0], "positionY": position[1]}
+        self.__placed_plants_data.append(plant)
 
     @staticmethod
     def is_plant_in_range(user_position: Tuple[float, float], plant_position: Tuple[float, float],
@@ -20,9 +21,6 @@ class PlacedPlants:
         if distance == 0:
             return self.__placed_plants_data
         for plant in self.__placed_plants_data:
-            if self.is_plant_in_range(user_position, self.__placed_plants_data[plant], distance):
-                plant_dict = {"name": plant,
-                              "positionX": self.__placed_plants_data[plant][0],
-                              "positionY": self.__placed_plants_data[plant][1]}
-                plants_to_return.append(plant_dict)
+            if self.is_plant_in_range(user_position, (plant["positionX"], plant["positionY"]), distance):
+                plants_to_return.append(plant)
         return plants_to_return
