@@ -18,6 +18,7 @@ def add_plant():
     placed_plants.add_plant(plants_database.find_plant(name), (position_x, position_y))
 
     resp = make_response("")
+    resp.headers["Access-Control-Allow-Origin"] = "*"
     return resp
 
 
@@ -29,6 +30,7 @@ def get_plants():
     distance = float(arguments.get("distance"))
     resp = jsonify(placed_plants.show_plants_in_range((user_position_x, user_position_y), distance))
 
+    resp.headers["Access-Control-Allow-Origin"] = "*"
     return resp
 
 
