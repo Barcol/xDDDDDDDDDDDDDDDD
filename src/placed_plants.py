@@ -1,3 +1,4 @@
+import json
 from typing import Tuple, List, Union
 
 
@@ -8,6 +9,7 @@ class PlacedPlants:
     def add_plant(self, name: str, position: Tuple[float, float]):
         plant = {"name": name, "positionX": position[0], "positionY": position[1]}
         self.__placed_plants_data.append(plant)
+        self.save_database()
 
     @staticmethod
     def is_plant_in_range(user_position: Tuple[float, float], plant_position: Tuple[float, float],
@@ -24,3 +26,7 @@ class PlacedPlants:
             if self.is_plant_in_range(user_position, (plant["positionX"], plant["positionY"]), distance):
                 plants_to_return.append(plant)
         return plants_to_return
+
+    def save_database(self):
+        with open("data.json", "w") as outfile:
+            json.dump(self.__placed_plants_data, outfile)
