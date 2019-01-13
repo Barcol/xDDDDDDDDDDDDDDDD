@@ -10,7 +10,8 @@ class PlacedPlants:
 
     def add_plant(self, name: str, position: Tuple[float, float]):
         plant = {"name": name, "positionX": position[0], "positionY": position[1]}
-        self.__placed_plants_data.append(plant)
+        if name:
+            self.__placed_plants_data.append(plant)
         self.save_database()
 
     @staticmethod
