@@ -28,6 +28,10 @@ class PlacedPlants:
                 plants_to_return.append(plant)
         return plants_to_return
 
+
+    def sort_plants(self):
+
+
     def save_database(self):
         with open("data.json", "w") as outfile:
             json.dump(self.__placed_plants_data, outfile)

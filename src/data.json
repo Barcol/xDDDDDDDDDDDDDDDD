@@ -1,1 +1,22 @@
-[{"name": "Camellia sinensis (L.) Kuntze", "positionX": 13.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 13.0, "positionY": 12.0}, {"name": "Juniperus L.", "positionX": 11.0, "positionY": 29.0}, {"name": "Aralia cordata Thunb.", "positionX": 50.0, "positionY": 20.0}, {"name": "Aralia cordata Thunb.", "positionX": 50.0, "positionY": 20.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 12.0, "positionY": 12.0}, {"name": "Aralia cordata Thunb.", "positionX": 12.0, "positionY": 11.0}, {"name": "Aralia cordata Thunb.", "positionX": 12.0, "positionY": 11.0}, {"name": "Aralia cordata Thunb.", "positionX": 12.0, "positionY": 11.0}, {"name": "Aralia cordata Thunb.", "positionX": 12.0, "positionY": 11.0}, {"name": "Aralia cordata Thunb.", "positionX": 12.0, "positionY": 11.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 14.0, "positionY": 18.0}, {"name": "Camellia sinensis (L.) Kuntze", "positionX": 14.0, "positionY": 18.0}]
+[
+  {
+    "name": "Camellia sinensis (L.) Kuntze",
+    "positionX": 13.0,
+    "positionY": 12.0
+  },
+  {
+    "name": "Camellia sinensis (L.) Kuntze",
+    "positionX": 13.0,
+    "positionY": 12.0
+  },
+  {
+    "name": "Aralia cordata Thunb.",
+    "positionX": 50.0679704,
+    "positionY": 19.9075318
+  },
+  {
+    "name": "Juniperus L.",
+    "positionX": 50.0679768,
+    "positionY": 19.9075214
+  }
+]
