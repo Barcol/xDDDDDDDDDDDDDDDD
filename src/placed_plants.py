@@ -1,4 +1,5 @@
 import json
+from math import hypot, cos
 from typing import Tuple, List, Union
 
 
@@ -22,15 +23,24 @@ class PlacedPlants:
     def show_plants_in_range(self, user_position: Tuple[float, float], distance: float) -> Union[List, dict]:
         plants_to_return = []
         if distance == 0:
-            return self.__placed_plants_data
+            return self.sort_plants(user_position, self.__placed_plants_data)
+
         for plant in self.__placed_plants_data:
             if self.is_plant_in_range(user_position, (plant["positionX"], plant["positionY"]), distance):
                 plants_to_return.append(plant)
-        return plants_to_return
 
+        return self.sort_plants(user_position, plants_to_return)
 
-    def sort_plants(self):
+    @staticmethod
+    def sort_plants(user_position: Tuple[float, float], plants: list):
+        for plant in plants:
+            plant["distance"] = hypot(110.574 * (plant["positionX"] - user_position[0]),
+                                      111.32 * (plant["positionY"] - user_position[1])
+                                      * cos(plant["positionX"]))
+            # plant["distance"] = hypot(plant["positionX"] - user_position[0], plant["positionY"] - user_position[1])
 
+        sorted_plants = sorted(plants, key=lambda plant: plant["distance"])
+        return sorted_plants
 
     def save_database(self):
         with open("data.json", "w") as outfile:

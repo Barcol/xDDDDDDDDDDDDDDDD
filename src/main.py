@@ -28,8 +28,11 @@ def get_plants():
     user_position_x = float(arguments.get("userPositionX"))
     user_position_y = float(arguments.get("userPositionY"))
     distance = float(arguments.get("distance"))
-    resp = jsonify(placed_plants.show_plants_in_range((user_position_x, user_position_y), distance))
 
+    plants = placed_plants.show_plants_in_range((user_position_x, user_position_y), distance)
+    print(plants)
+
+    resp = jsonify(plants)
     resp.headers["Access-Control-Allow-Origin"] = "*"
     return resp
 
